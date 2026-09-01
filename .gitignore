@@ -47,3 +47,13 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Restricted MIMIC-IV data and generated outputs
+*.duckdb
+*.csv
+*.csv.gz
+*.rds
+*.zip
+output/
+results/
+MIMIC_IV_Fluid_MASTER_REBUILD/
