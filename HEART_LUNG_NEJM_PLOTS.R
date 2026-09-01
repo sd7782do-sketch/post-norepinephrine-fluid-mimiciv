@@ -124,7 +124,14 @@ run_nejm_figures <- function(results_dir = "", figure_dir = "") {
     ggplot2::geom_vline(xintercept=1,color=gray,linewidth=.45,linetype=2)+
     ggplot2::geom_errorbarh(height=.16,linewidth=.55,color=dark)+ggplot2::geom_point(size=2.4,color=blue)+
     ggplot2::scale_x_log10(breaks=c(.5,.75,1,1.5,2),limits=c(.48,2.05))+
-    ggplot2::labs(title="Figure 3. Adjusted associations with fluid exposure",subtitle="Odds ratios compare the lower-volume with the higher-volume group; error bars indicate 95% confidence intervals",x="Odds ratio (log scale)",y=NULL)+theme_nejm()+
+    ggplot2::labs(
+      title="Figure 3. Adjusted associations with fluid exposure",
+      subtitle=paste0(
+        "Odds ratios compare the lower-volume with the higher-volume group;\n",
+        "error bars indicate 95% confidence intervals"
+      ),
+      x="Odds ratio (log scale)",y=NULL
+    )+theme_nejm()+
     ggplot2::theme(axis.line.y=ggplot2::element_blank(),axis.ticks.y=ggplot2::element_blank())
   save_tiff(p3,"Figure_3_Forest_NEJM.tiff",7.2,5.2)
 
